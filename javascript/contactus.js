@@ -8,7 +8,7 @@ function contactus()
     }
     document.getElementsByTagName("main")[0].innerHTML="<div class='container contactuscontainer'><div id='map'></div>";
 
-    //ReadDatabase2();
+    ReadDatabase2();
 }
 //加入地圖與相關資訊
 function AddContactusItem()

@@ -475,7 +475,7 @@ function ReadDatabase()
     // Set a callback to run when the Google Visualization API is loaded.	
     google.charts.setOnLoadCallback(init);
 }
-//ReadDatabase();
+ReadDatabase();
 
 function init()
 {
