@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Compiled and minified Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- 利用Google Visualization讀取Google Sheet https://www.labnol.org/code/google-sheet-d3js-visualization-200608 -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="javascript/diary.js" charset="utf-8"></script>
+    <script src="javascript/news.js" charset="utf-8"></script>
+    <script src="javascript/contactus.js" charset="utf-8"></script>
+    <link href="css/diary.css" rel="stylesheet" type="text/css">
+    <link href="css/slide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        header, main, footer {
+        padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+        header, main, footer {
+            padding-left: 0;
+        }
+        }
+    </style>
+</head>
+<body class="teal lighten-3">
+    <!--header-->
+    <header>
+        <nav>
+            <div id="head"></div>
+            <div class="nav-wrapper teal">
+            <a href="index.html" class="brand-logo center">My Diary</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a onclick="contactus()">聯絡我們</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <!--sidenav-->
+        <ul id="slide-out" class="sidenav sidenav-fixed teal lighten-4">
+            <li><div class="user-view">
+            <div class="background">
+                
+            </div>
+            <a href="#user"></a>
+            <a href="#name"><span class="black-text name center"><h4>My Diary</h4></span></a>
+            <a href="#email"><span class="black-text email"></span></a>
+            </div></li><br>
+            <li><a class="waves-effect" href="index.html"><i class="material-icons">cloud</i>首頁</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">內容</a></li>
+            <li><a class="waves-effect" onclick="Today()"><i class="material-icons">event</i>今日</a></li>
+            <li><a class="waves-effect" href="index.html?id=0"><i class="material-icons">event_note</i>行事曆</a></li>
+            <li><a class="waves-effect" href="index.html?id=3"><i class="material-icons">assignment</i>新聞</a></li>
+            <li><a class="waves-effect" href="index.html?id=4"><i class="material-icons">description</i>資料庫</a></li>
+            <a class="waves-effect contactuspos" onclick="contactus()"><i class="tiny material-icons">phone</i>聯絡我們</a>
+        </ul>
+    </header>
+    <script>
+        document.getElementById("head").innerHTML='<a href="#" data-target="slide-out" class="left sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>';
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+    <!--body-->
+    <main class="Background">
+      
+    </main>
+
+    <!--footer-->
+    <footer class="page-footer teal">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">My Diary</h5>
+              <p class="grey-text text-lighten-4">Final Project of HTML5 course</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">連結</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" onclick="Today()">今日</a></li>
+                <li><a class="grey-text text-lighten-3" href="index.html?id=0">行事曆</a></li>
+                <li><a class="grey-text text-lighten-3" href="index.html?id=3">新聞</a></li>
+                <li><a class="grey-text text-lighten-3" href="index.html?id=4">資料庫</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            4107056008 林泓凱
+          <a class="grey-text text-lighten-4 right" href="index.html">My Diary</a>
+          </div>
+        </div>
+    </footer>
+    <script>
+      ReadParameter();
+    </script>
+</body>
+</html>
