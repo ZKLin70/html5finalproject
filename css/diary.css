@@ -106,18 +106,20 @@ img{
     margin-bottom: 0%;
 }
 .daycontainer{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     text-align: center;
 }
 .databasecontainer{
     max-width: 100%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     text-align: center;
     overflow-x: auto;
 }
 .contactuscontainer{
+    padding-top: 3%;
+    padding-bottom: 3%;
     text-align: center;
 }
 .contactuspos{
