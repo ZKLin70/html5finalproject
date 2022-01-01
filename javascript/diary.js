@@ -468,6 +468,7 @@ function FormResponse(day)
 //讀取資料庫資料至doc陣列，進入網站或資料庫內容更改時觸發
 function ReadDatabase()
 {
+    AddPreloader();
     // https://developers.google.com/chart/interactive/docs/quick_start
     // Load the Visualization API and the corechart package.
     google.charts.load('current', {'packages':['corechart']});
@@ -697,4 +698,53 @@ function MainPage()
     }
     text+="</table>";
     document.getElementById("information3").innerHTML=text;
+}
+//加入preloader動畫
+function AddPreloader()
+{
+    var text='<div class="preloadercontainer">';
+    text+='<div class="preloader-wrapper big active">';
+        text+='<div class="spinner-layer spinner-blue">';
+            text+='<div class="circle-clipper left">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="gap-patch">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="circle-clipper right">';
+                text+='<div class="circle"></div>';
+            text+='</div>';
+        text+='</div>';
+    
+        text+='<div class="spinner-layer spinner-red">';
+            text+='<div class="circle-clipper left">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="gap-patch">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="circle-clipper right">';
+                text+='<div class="circle"></div>';
+            text+='</div>';
+        text+='</div>';
+    
+        text+='<div class="spinner-layer spinner-yellow">';
+            text+='<div class="circle-clipper left">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="gap-patch">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="circle-clipper right">';
+                text+='<div class="circle"></div>';
+            text+='</div>';
+        text+='</div>';
+    
+        text+='<div class="spinner-layer spinner-green">';
+            text+='<div class="circle-clipper left">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="gap-patch">';
+                text+='<div class="circle"></div>';
+            text+='</div><div class="circle-clipper right">';
+                text+='<div class="circle"></div>';
+            text+='</div>';
+        text+='</div>';
+    text+='</div>';
+    text+='</div>';
+
+    document.getElementsByTagName("main")[0].innerHTML=text;
 }

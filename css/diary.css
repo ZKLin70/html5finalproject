@@ -134,3 +134,9 @@ img{
 main{
     min-height: 453px;
 }
+.preloadercontainer{
+    min-height: 453px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
