@@ -672,11 +672,34 @@ function MainPage()
     month=month-changed;
     changed=0;
     //近期更動
+    let checked=[];
+    let exist=false;
+    for(let i=0;i<3;i++)
+    {
+        checked[i]=[];
+    }
     text="<table><tr><td>更動日期</td><td>日期</td><td>事務</td></tr>";
     if(doc.length<5)
     {
-        for(let i=0;i<doc.length;i++)
+        for(let i=(doc.length-1);i>=0;i--)
         {
+            for(let j=0;j<checked.length;j++)
+            {
+                if(doc[i][1]==checked[0][j]&&doc[i][2]==checked[1][j]&&doc[i][3]==checked[2][j])
+                {
+                    exist=true;
+                    break;
+                }
+            }
+            if(exist)
+            {
+                exist=false;
+                continue;
+            }
+            var temp=checked.length;
+            checked[0][temp]=doc[i][1];
+            checked[1][temp]=doc[i][2];
+            checked[2][temp]=doc[i][3];
             text+="<tr>";
                 text+="<td>"+doc[i][0]+"</td>";
                 text+="<td>"+doc[i][1]+"/"+doc[i][2]+"/"+doc[i][3]+"</td>";
@@ -686,14 +709,35 @@ function MainPage()
     }
     else
     {
-        for(let i=0;i<5;i++)
+        let count=0;
+        let count2=0;
+        while(count!=5&&count2!=0)
         {
-            var temp=doc.length-1-i;
-            text+="<tr>";
-                text+="<td>"+doc[temp][0]+"</td>";
-                text+="<td>"+doc[temp][1]+"/"+doc[temp][2]+"/"+doc[temp][3]+"</td>";
-                text+="<td>"+doc[temp][9]+"</td>";
-            text+="</tr>";
+            for(count2=(doc.length-1);count2>=0;count2--)
+            {
+                for(let j=0;j<checked.length;j++)
+                {
+                    if(doc[count2][1]==checked[0][j]&&doc[count2][2]==checked[1][j]&&doc[count2][3]==checked[2][j])
+                    {
+                        exist=true;
+                        break;
+                    }
+                }
+                if(exist)
+                {
+                    exist=false;
+                    continue;
+                }
+                var temp=checked.length;
+                checked[0][temp]=doc[count2][1];
+                checked[1][temp]=doc[count2][2];
+                checked[2][temp]=doc[count2][3];
+                text+="<tr>";
+                    text+="<td>"+doc[count2][0]+"</td>";
+                    text+="<td>"+doc[count2][1]+"/"+doc[count2][2]+"/"+doc[count2][3]+"</td>";
+                    text+="<td>"+doc[count2][9]+"</td>";
+                text+="</tr>";
+            }
         }
     }
     text+="</table>";
