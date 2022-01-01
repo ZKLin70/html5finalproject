@@ -104,7 +104,7 @@ function AddItemOnTopNav()
     var text="";
     text+="<nav id='tn' class='teal lighten-1'>";
         text+="<ul class='center'>";
-            text+="<li id='bn1'><a onclick='move(-1)'><i class='material-icons'>chevron_left</i></a></li>";
+            text+="<li id='bn1'><button id='button1' onclick='move(-1)'><i class='material-icons'>chevron_left</i></button></li>";
             text+="<li id='tn1'><a onclick='pixnet(0)'>熱門</a></li>";
             text+="<li id='tn2'><a onclick='pixnet(3)'>寵物</a></li>";
             text+="<li id='tn3'><a onclick='pixnet(5)'>生活</a></li>";
@@ -125,7 +125,7 @@ function AddItemOnTopNav()
             text+="<li id='tn18'><a onclick='pixnet(26)'>美食</a></li>";
             text+="<li id='tn19'><a onclick='pixnet(28)'>旅遊</a></li>";
             text+="<li id='tn20'><a onclick='pixnet(32)'>體育</a></li>";
-            text+="<li id='bn2'><a onclick='move(1)'><i class='material-icons'>chevron_right</i></a></li>";
+            text+="<li id='bn2'><button id='button2' onclick='move(1)'><i class='material-icons'>chevron_right</i></button></li>";
         text+="</ul>";
     text+="</nav>";
 
@@ -169,28 +169,26 @@ function move(n)
     {
         if(pixnetpos<20)
         {
-            document.getElementById("bn2").disabled=false;
             $("#tn"+(pixnetpos-pixnetnum+1)).hide();
             $("#tn"+(pixnetpos+1)).show();
             pixnetpos=pixnetpos+1;
-        }
-        else
-        {
-            document.getElementById("bn2").disabled=true;
+            if(pixnetpos==20)
+                document.getElementById("button2").disabled=true;
+            else if(pixnetpos==2)
+                document.getElementById("button1").disabled=false;
         }
     }
     else
     {
         if((pixnetpos-pixnetnum)>1)
         {
-            document.getElementById("bn1").disabled=false;
             $("#tn"+pixnetpos).hide();
             $("#tn"+(pixnetpos-pixnetnum)).show();
             pixnetpos=pixnetpos-1;
-        }
-        else
-        {
-            document.getElementById("bn1").disabled=true;
+            if(pixnetpos==1)
+                document.getElementById("button1").disabled=true;
+            else if(pixnetpos==19)
+                document.getElementById("button2").disabled=false;
         }
     }
 }
