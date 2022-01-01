@@ -4,7 +4,7 @@ let month=d.getMonth();
 let date=d.getDate();
 let changed=0;
 let data=[];
-let doc=[[0,2021,12,30,'07,09','30,50','09,10','50,50','123,456',"一二三四五六七八九十",000]];
+let doc=[];
 const days=[31,28,31,30,31,30,31,31,30,31,30,31];
 if(year%4==0)
 {
