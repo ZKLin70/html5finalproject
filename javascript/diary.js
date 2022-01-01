@@ -683,7 +683,7 @@ function MainPage()
     {
         for(let i=(doc.length-1);i>=0;i--)
         {
-            for(let j=0;j<checked.length;j++)
+            for(let j=0;j<checked[0].length;j++)
             {
                 if(doc[i][1]==checked[0][j]&&doc[i][2]==checked[1][j]&&doc[i][3]==checked[2][j])
                 {
@@ -696,7 +696,7 @@ function MainPage()
                 exist=false;
                 continue;
             }
-            var temp=checked.length;
+            var temp=checked[0].length;
             checked[0][temp]=doc[i][1];
             checked[1][temp]=doc[i][2];
             checked[2][temp]=doc[i][3];
@@ -715,7 +715,7 @@ function MainPage()
         {
             for(count2=(doc.length-1);count2>=0;count2--)
             {
-                for(let j=0;j<checked.length;j++)
+                for(let j=0;j<checked[0].length;j++)
                 {
                     if(doc[count2][1]==checked[0][j]&&doc[count2][2]==checked[1][j]&&doc[count2][3]==checked[2][j])
                     {
@@ -728,7 +728,7 @@ function MainPage()
                     exist=false;
                     continue;
                 }
-                var temp=checked.length;
+                var temp=checked[0].length;
                 checked[0][temp]=doc[count2][1];
                 checked[1][temp]=doc[count2][2];
                 checked[2][temp]=doc[count2][3];
