@@ -714,7 +714,7 @@ function MainPage()
     {
         let count=0;
         let count2=0;
-        while(count!=5&&count2!=0)
+        while(count!=5&&count2!=-1)
         {
             for(count2=(doc.length-1);count2>=0;count2--)
             {
@@ -740,6 +740,7 @@ function MainPage()
                     text+="<td>"+doc[count2][1]+"/"+doc[count2][2]+"/"+doc[count2][3]+"</td>";
                     text+="<td>"+doc[count2][9]+"</td>";
                 text+="</tr>";
+                count=count+1;
             }
         }
     }
