@@ -15,6 +15,7 @@ function AddContactusItem()
     document.getElementsByTagName("main")[0].innerHTML="<div class='container contactuscontainer'><div id='map'></div>";
 
     var txt='<h4>國立中興大學</h4>'+
+    '<p><電話：04-22873181/p>'+
     '<p>地址：40227臺中市南區興大路145號（本校校門口位於興大路與學府路交叉口）</p>'+
     '<iframe height="500px" width="90%" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+map[0][0]+', '+map[0][1]+'&z=15&t=p&output=embed" title="W3Schools Free Online Web Tutorials">'+
     '</iframe>'+

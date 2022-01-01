@@ -50,10 +50,10 @@ function calendar(number){
         text+="</td>";
         text+="<td class='YM' colspan='2'></td>";
         text+="<td class='YM button'>";
-            text+="<div onclick='calendar(1)'>︿</div>";
+            text+="<div onclick='calendar(1)'><i class='material-icons'>expand_less</i></div>";
         text+="</td>";
         text+="<td class='YM button'>";
-            text+="<div onclick='calendar(-1)'>﹀</div>";
+            text+="<div onclick='calendar(-1)'><i class='material-icons'>expand_more</i></div>";
         text+="</td></tr>";
     
     let day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];

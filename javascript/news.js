@@ -169,18 +169,28 @@ function move(n)
     {
         if(pixnetpos<20)
         {
+            document.getElementById("bn2").disabled=false;
             $("#tn"+(pixnetpos-pixnetnum+1)).hide();
             $("#tn"+(pixnetpos+1)).show();
             pixnetpos=pixnetpos+1;
+        }
+        else
+        {
+            document.getElementById("bn2").disabled=true;
         }
     }
     else
     {
         if((pixnetpos-pixnetnum)>1)
         {
+            document.getElementById("bn1").disabled=false;
             $("#tn"+pixnetpos).hide();
             $("#tn"+(pixnetpos-pixnetnum)).show();
             pixnetpos=pixnetpos-1;
+        }
+        else
+        {
+            document.getElementById("bn1").disabled=true;
         }
     }
 }
