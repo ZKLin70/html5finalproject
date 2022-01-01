@@ -181,7 +181,7 @@ function move(n)
     }
     else
     {
-        if((pixnetpos-pixnetnum)>1)
+        if((pixnetpos-pixnetnum)>0)
         {
             $("#tn"+pixnetpos).hide();
             $("#tn"+(pixnetpos-pixnetnum)).show();
