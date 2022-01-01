@@ -336,6 +336,8 @@ function FormInitialize(day)
             let dhr=doc[i][6].split(',');
             let dmin=doc[i][7].split(',');
             let task=doc[i][8].split(',');
+            if(shr=="")
+                shr=[];
             for(let j=0;j<shr.length;j++)
             {
                 var temp=data.length;
@@ -463,7 +465,8 @@ function FormResponse(day)
     var textarea = document.forms["form"]["textarea"].value;
     var MySubmit = "https://docs.google.com/forms/d/e/1FAIpQLSfzAmJLWqBFjLq4WsWA6DBaqMHRYlL95Jp11_LPMB33iUVeEg/formResponse?usp=pp_url&entry.2133235783="+year+"&entry.1419523339="+(month+1)+"&entry.2116723698="+day+"&entry.1892830639="+shr+"&entry.587725558="+smin+"&entry.740559503="+dhr+"&entry.1440212711="+dmin+"&entry.1474711690="+task+"&entry.1827660273="+important+"&entry.1558330192="+textarea;
     var NewOpen = window.open(MySubmit);
-    window.location.href="index.html?id=2&change="+changed+"&day="+day;
+    var link="'"+"index.html?id=2&change="+changed+"&day="+day+"'";;
+    window.location.href=link;
 }
 //讀取資料庫資料至doc陣列，進入網站或資料庫內容更改時觸發
 function ReadDatabase()
