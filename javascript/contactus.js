@@ -19,7 +19,7 @@ function AddContactusItem()
     '<p>地址：40227臺中市南區興大路145號（本校校門口位於興大路與學府路交叉口）</p>'+
     '<iframe height="500px" width="90%" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+map[0][0]+', '+map[0][1]+'&z=15&t=p&output=embed" title="W3Schools Free Online Web Tutorials">'+
     '</iframe>'+
-    '<a href="https://maps.google.com.tw/maps?daddr=24.12422722603651, 120.6753383576278" target="_blank"><h5>查詢前往路線<h5></a></div>'
+    '<a href="https://maps.google.com.tw/maps?daddr='+map[0][0]+', '+map[0][1]+'" target="_blank"><h5>查詢前往路線<h5></a></div>'
     document.getElementById("map").innerHTML=txt;
 }
 //讀取資料庫
