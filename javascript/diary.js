@@ -658,6 +658,17 @@ function MainPage()
                 year=year+1;
             }
         }
+        else if(num<=0)
+        {
+            month=month-1;
+            changed=changed-1;
+            if(month<0)
+            {
+                month=11;
+                year=year-1;
+            }
+            num=days[month]+num;
+        }
         for(let j=(doc.length-1);j>=0;j--)
         {
             if(doc[j][1]==year&&doc[j][2]==(month+1)&&doc[j][3]==num)
